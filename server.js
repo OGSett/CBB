@@ -50,10 +50,10 @@ io.on('connection', (socket) => {
             const { room, sender, message } = data;
 
             // validate data
-            if (!room || !sender || !message) {
-                console.error('Invalid message data:', data);
-                return;
-            }
+            // if (!room || !sender || !message) {
+            //     console.error('Invalid message data:', data);
+            //     return;
+            // }
 
             // broadcast message to hte room
             io.to(room).emit('receiveMessage', { sender, message, time: new Date() });
